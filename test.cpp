@@ -1,30 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main ()
+template <typename T>
+void sortAndPrint(vector<T> &v)
 {
-    int t;
-    cin >> t;
-    for (int i=0; i<t; i++)
+    sort(v.begin(), v.end());
+    for (const T &val : v)
     {
-        int n;
-        cin >> n;
-        vector<pair<int, int>> ab(n);
-        for (int j=0; j<n; j++) 
-        {
-            cin >> ab[j].first >> ab[j].second;		
-        }	 
-        stable_sort(ab.begin(), ab.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
-            return a.second > b.second;
-        });
-        for (int j=0; j<n; j++)
-        {
-            cout << ab[j].first << " " << ab[j].second << endl;
-        }
-        if (i < t-1) // Add an extra newline between test cases, but not after the last one
-        {
-            cout << endl;
-        }
+        cout << val << " ";
     }
+    cout << "\n";
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+    int n;
+    cin >> n;
+
+    vector<int> intVec(n);
+    for (int &val : intVec)
+    {
+        cin >> val;
+    }
+    sortAndPrint(intVec);
+
+    vector<double> doubleVec(n);
+    for (double &val : doubleVec)
+    {
+        cin >> val;
+    }
+    sortAndPrint(doubleVec);
+
     return 0;
 }
