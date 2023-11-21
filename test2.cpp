@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 #define endl '\n'
 #define buff ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
-/*
-#pragma GCC optimize ("Ofast")
-#pragma GCC optimize ("unroll-loops")
-#pragma GCC optimize(3)
-*/
 using namespace std;
 #define ll long long
 #define int ll
@@ -17,15 +12,19 @@ struct Student
     string name;
     float score;
     string address;
+    bool operator<(const Student &other) const
+    {
+        return score > other.score;
+    }
 };
 
 signed main()
 {
     int n;
     cin >> n;
-    while (n--)
+    vector<Student> students;
+    for (Student &s : students)
     {
-        Student s;
         cout << "Enter student ID: ";
         cin >> s.id;
         cout << "Enter student age: ";
@@ -36,6 +35,10 @@ signed main()
         cin >> s.score;
         cout << "Enter student address: ";
         cin >> s.address;
+    }
+    sort(students.begin(), students.end());
+    for (const Student &s : students)
+    {
         cout << "\nStudent Information:\n";
         cout << "ID: " << s.id << "\n";
         cout << "Age: " << s.age << "\n";
@@ -43,4 +46,5 @@ signed main()
         cout << "Score: " << s.score << "\n";
         cout << "Address: " << s.address << "\n";
     }
+    return 0;
 }
