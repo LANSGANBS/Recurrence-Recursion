@@ -2,8 +2,8 @@
 #define endl '\n'
 #define buff ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
 /*
-#pragma GCC optimize ("Ofast")
-#pragma GCC optimize ("unroll-loops")
+#pragma GCC optimize("Ofast")
+#pragma GCC optimize("unroll-loops")
 #pragma GCC optimize(3)
 */
 using namespace std;
@@ -31,7 +31,6 @@ void solve()
     int a, b, c;
     while (cin >> a >> b >> c)
     {
-        memset(rpt, 0, sizeof(rpt));
         if (a == -1 && b == -1 && c == -1)
             break;
         cout << "w(" << a << ", " << b << ", " << c << ") = ";
